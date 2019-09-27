@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Hangman</title>
+</head>
+
+<body>
+
+    <h1>Welcome to the Pet Word Guessing Game!</h1>
+
+
+    <div class="box">
+
+        <p>In this game you'll be alerted at the top of your screen to start guessing letters.
+            Once you guess a correct letter, you'll be shown it on the "_" in the alert box.
+            You have unlimited guessing, because in 2019, EVERYONE is a winner! Good Luck. Have fun.</p>
+
+    </div>
+
+    <p2>!HINT! The pets you are guessing are ones that the average person will have in their house!</p2>
+
+
+    <script text="text/javascript">
+
+        // word list array
+
+        var words = ["dog", "pig", "rock", "cat", "turtle", "gerbal", "snake", "horse"];
+
+        // pick a random word from list
+
+        var word = words[Math.floor(Math.random() * words.length)];
+
+        // sets uo the answerArray to show letters 
+        // using "_"
+
+        var answerArray = [];
+
+        for (var i = 0; i < word.length; i++) {
+            answerArray[i] = "_";
+
+        }
+
+        // create variable on how many letter left in word
+
+        var remainingLetters = word.length;
+
+        // ************* The Main Game Loop ************
+
+
+
+        // while  there are letter left to be guessed
+
+        while (remainingLetters > 0) {
+            // show player progress
+            alert(answerArray.join(" "));
+
+            // get a guess from player
+            var guess = prompt("Guess a letter, or click cancel to stop playing");
+
+            // if the guess is blank
+            if (guess == null) {
+                // exit the game loop
+                break;
+                // if the guess is more than one letter or no letters
+            } else if (guess.length !== 1) {
+                // alert to guess a single letter only
+                alert("Please enter a single letter.");
+                // vallid guess
+            } else {
+                // update the game state with the guess
+                for (var j = 0; j < word.length; j++) {
+                    // if the letter they guessed is in the word
+                    // at that point or index
+                    if (word[j] === guess) {
+                        // update answer array with letter they guessed
+                        // at that point
+                        answerArray[j] = guess;
+                        // subtract one from remaining letters
+                        remainingLetters--;
+
+                    }
+                }
+            }
+            // ******* end of game loop **********
+        }
+
+        // let player know the word 
+        alert(answerArray.join(" "));
+        //congrats to player
+        alert("Good Job! the answer was " + word);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

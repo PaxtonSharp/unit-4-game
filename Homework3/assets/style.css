@@ -1,0 +1,22 @@
+.box {
+    background: pink;
+    padding: 87px;
+
+    margin: 100px;
+    font: bold;
+    background-image: url(pets.png);
+    background-repeat: repeat-x;
+    
+}
+
+p {
+    color: #2f4c5c;
+    font: bolder;
+}
+
+body {
+    background-color: #a7dbe3;
+    
+}
+
+
