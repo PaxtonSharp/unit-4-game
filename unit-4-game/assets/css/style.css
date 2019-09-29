@@ -1,0 +1,35 @@
+.crystals{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.crystal{
+    border:1px solid green;
+    height:200px;
+    width: 200px;
+    border-radius: 4x;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5 );
+    
+    
+}
+
+.crystal:hover{
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5 );
+    transform: translate(5px,25px);
+    cursor: pointer;
+    transition: box-shadow 2s, transform 2s;
+
+}
+
+img{
+    width:50px
+}
+
+html{
+    background-color: palevioletred;
+}
+
+p{
+    text-size-adjust: 50px;
+}
